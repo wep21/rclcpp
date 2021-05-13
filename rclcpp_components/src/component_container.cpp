@@ -22,7 +22,7 @@ int main(int argc, char * argv[])
 {
   /// Component container with a single-threaded executor.
   rclcpp::init(argc, argv);
-  auto exec = std::make_shared<rclcpp::executors::SingleThreadedExecutor>();
+  auto exec = std::make_shared<rclcpp::executors::StaticSingleThreadedExecutor>();
   auto node = std::make_shared<rclcpp_components::ComponentManager>(exec);
   exec->add_node(node);
   exec->spin();
